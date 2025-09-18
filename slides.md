@@ -21,6 +21,96 @@ __ <a href="https://indico.cern.ch/e/duw11" class="ns-c-iconlink"><mdi-open-in-n
 layout: top-title
 color: gray-light
 align: c
+title: reminders
+---
+
+:: title ::
+
+# Reminders
+
+:: content ::
+
+- LHCb uses DIRAC(X) for managing all its distributed computing activities
+- Peaking 400K concurrently running jobs
+  - on WLCG Grid, opportunistic grid-like sites, SSH-accessed clusters, HPCs, and the HLT farm
+  - not using any cloud
+- Using storage at the Tier0 (disk+tape), 8 Tier1 (disk+tape), a dozen Tier2D (disk)
+  - Mostly sending the jobs where there's the data
+
+
+---
+layout: top-title
+color: gray-light
+align: c
+title: reminders2
+---
+
+:: title ::
+
+# Reminders/2
+
+:: content ::
+
+- DIRAC is extended in LHCbDIRAC
+  - For interacting with "the Bookkeeping", which is a provenance database with an Oracle backend
+  - For TransformationSystem plugins
+  - For the ProductionSystem, which adds logic on top of the TS
+- WebAppDIRAC is extended in LHCbWebDIRAC, basically because of the bookkeeping
+- Pilot is extended in LHCbPilot for adding few minor Pilot commands
+
+So, for DiracX:
+- lhcbdiracx extends diracx
+- lhcbdiracx-web extends diracx-web
+
+---
+layout: top-title
+color: gray-light
+align: c
+title: reminders3
+---
+
+:: title ::
+
+# Reminders/3
+
+:: content ::
+
+- The vast majority of the jobs we run are production jobs
+  - and the vast majority of those are MonteCarlo simulation
+- Single users *can* submit jobs directly, but this is not the suggested way, and virtually no-one does
+- Analists *can* use Ganga to submit jobs, but not too many still do
+- Effectively, the vast majority of Analysis jobs come via Analysis Productions
+
+
+---
+layout: top-title
+color: gray-light
+align: c
+title: migration
+---
+
+:: title ::
+
+# DiracX in production
+
+:: content ::
+
+- LHCb migrated to DIRAC v9 + DiracX 0.0.1 (alpha versions) back in April
+  - before data taking restarted
+  - effectively, 1 week of downtime
+    - largely, **not** because of DiracX: we "profited" also for making (too) many **optional** MySQL updates
+      - this is what took **by far** most of the update time
+  - reported in BiLD https://indico.cern.ch/event/1531451/
+  - several fixes/updates followed
+  - running in productions with alpha versions since
+  - finally installed LHCbDIRAC v12.0 (on DIRAC v9.0) and lhcbdiracx v0.0.1 (on diracx v0.0.1)
+    - also lhcbdiracx-web v0.0.1
+
+
+---
+layout: top-title
+color: gray-light
+align: c
 title: functions
 ---
 
@@ -72,7 +162,7 @@ title: chart
 
 :: title ::
 
-# The LHCb case -- the helm chart
+# The helm chart
 
 :: content ::
 
@@ -88,7 +178,7 @@ title: client
 
 :: title ::
 
-# The LHCb case -- the client
+# The client
 
 :: content ::
 
@@ -106,7 +196,7 @@ title: LHCbDiracX
 
 :: title ::
 
-# The LHCb case -- lhcbdiracx
+# lhcbdiracx
 
 :: content ::
 
@@ -120,7 +210,7 @@ title: LHCbDiracXWeb
 
 :: title ::
 
-# The LHCb case -- lhcbdiracx-web
+# lhcbdiracx-web
 
 :: content ::
 
@@ -134,7 +224,7 @@ title: monitoring
 
 :: title ::
 
-# The LHCb case -- monitoring
+# monitoring
 
 :: content ::
 
@@ -148,39 +238,9 @@ title: OTEL
 
 :: title ::
 
-# The LHCb case -- infrastructure monitoring via OpenTelemetry
+# infrastructure monitoring via OpenTelemetry
 
 :: content ::
-
-
----
-layout: top-title
-color: gray-light
-align: c
-title: lhcbdiracx
----
-
-:: title ::
-
-# lhcbdiracx
-
-:: content :: 
-
-
-
----
-layout: top-title
-color: gray-light
-align: c
-title: lhcbdiracx-web
----
-
-:: title ::
-
-# lhcbdiracx-web
-
-:: content :: 
-
 
 
 ---
@@ -195,7 +255,6 @@ title: LHCbDIRACCommon
 # LHCbDIRACCommon
 
 :: content :: 
-
 
 
 ---
@@ -253,11 +312,12 @@ title: credits/people
         <strong>Current Developers, maintainers, supporters</strong>
     </div>
     <div class="grid-item col-span-2">
-        Chris Burr <i>CERN, LHCb</i><br/>
-        Christophe Haen <i>CERN, LHCb</i><br/>
-        Alexandre Boyer <i>CERN, LHCb</i><br/>
-        Ryunosuke O'Neil <i>CERN, LHCb</i><br/>
-        Federico Stagni <i>CERN, LHCb</i>
+        Chris Burr <i>CERN</i><br/>
+        Christophe Haen <i>CERN</i><br/>
+        Alexandre Boyer <i>CERN</i><br/>
+        Ryunosuke O'Neil (Wada) <i>CERN</i><br/>
+        Federico Stagni <i>CERN</i><br/>
+        Vladimir Romanovskiy <i>Cincinnati</i>
     </div>
 </div>
 
@@ -268,11 +328,3 @@ title: credits/people
 <div class="grid-item col-span-3 text-center mt-180px mb-auto font-size-1.5rem">
     <strong>Questions?</strong>
 </div>
-
----
-layout: section
-color: cyan-light
-title: Backup
----
-
-# Backup
