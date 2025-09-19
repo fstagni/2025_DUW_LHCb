@@ -214,6 +214,13 @@ title: LHCbDiracXWeb
 
 :: content ::
 
+- Two new applications developed for lhcbdiracx-web.
+- A bookkeeping application: a replacement for the old bookkeeping application with filtering capability. Work in Progress!
+  - Search bookkeeping datasets by path elements
+  - Browse results in a table or tree
+  - To be extended with more features when backend performance stabilises
+
+- A "storage report" application: a visualisation tool for LHCb storage. (also WIP!)
 
 ---
 layout: top-title
