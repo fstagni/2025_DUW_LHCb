@@ -220,7 +220,7 @@ title: LHCbDiracXWeb
   - Browse results in a table or tree
   - To be extended with more features when backend performance stabilises
 
-- A "storage report" application: a visualisation tool for LHCb storage. 
+- A "storage report" application: a visualisation tool for LHCb storage. (also WIP!)
 
 ---
 layout: top-title
